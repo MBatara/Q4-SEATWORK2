@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin-top: 125px;
+        }
+        .entirething {
+            display: flex;
+            justify-content: center;
+        }
+        .mascot {
+            padding: 10px;
+            margin-right: 5px;
+            text-align: center;
+            border: solid rgb(33, 37, 41) 2px;
+            background-color: rgb(12, 13, 15);
+            border-radius: 5px;
+            width: 500px;
+            height: 385px;
+        }
+        .calcu {
+            padding: 10px;
+            margin-left: 5px;
+            text-align: center;
+            border: solid rgb(33, 37, 41) 2px;
+            background-color: rgb(12, 13, 15);
+            border-radius: 5px;
+            width: 500px;
+            height: 385px;
+        }
+        img {
+            height: 200px;
+        }
+        table {
+            width: 100%;
+        }
+        button {
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: "Orbitron", sans-serif;
+        }
+        input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { /* to hide the ugly arrows inside both input I and input II */
+        -webkit-appearance: none;
+        margin: 0;
+        } 
+        input {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            border-radius: 5px;
+            background-color: rgb(46, 46, 46);
+            font-family: "Orbitron", sans-serif;
+        }
+        p {
+            padding: 5px;
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="entirething">
+    <div class="mascot">
+        <p>
+            Hello Student! I am Master Marc. Captain of the Yellow Tigers tribe. 
+            I also have a degree in Mathematics. 
+            Do you need any assistance with calculating fellow student?
+        </p>
+        <img src="https://png.pngtree.com/png-clipart/20230323/ourmid/pngtree-tiger-cartoon-smiling-face-png-image_6658949.png"> <br>
+        <p id="sagot"></p>
+    </div>
+    <div class="calcu">
+        <table class="table table-borderless">
+            <tr>
+                <td colspan="2"><input type="number" class="form-control bg-dark text-light" id="No1" placeholder="Input I"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="number" class="form-control bg-dark text-light" id="No2" placeholder="Input II"></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="btn btn-dark" id="addition" onClick="plus()">+</button></td>
+                <td><button type="button" class="btn btn-dark" id="subtraction" onClick="subtract()">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="btn btn-dark" id="multiplication" onClick="multiply()">×</button></td>
+                <td><button type="button" class="btn btn-dark" id="division" onClick="divide()">÷</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="button" class="btn btn-dark" id="power" onClick="power()">^</button></td>
+            </tr>
+        </table>
+        <p id="sagot"></p>
+        <script>
+            function plus() {
+                let num1 = document.getElementById("No1").value;
+                let num2 = document.getElementById("No2").value;
+                const sum = parseInt(num1) + parseInt(num2);
+            document.getElementById("sagot").innerHTML = num1 + " plus " + num2 + " is equal to " + sum + " fellow student.";
+            }
+            function subtract() {
+                let num1 = document.getElementById("No1").value;
+                let num2 = document.getElementById("No2").value;
+                const diff = parseInt(num1) - parseInt(num2);
+            document.getElementById("sagot").innerHTML = num1 + " minus " + num2 + " is equal to " + diff + " fellow student." ;
+            }
+            function multiply() {
+                let num1 = document.getElementById("No1").value;
+                let num2 = document.getElementById("No2").value;
+                const prod = parseInt(num1) * parseInt(num2);
+            document.getElementById("sagot").innerHTML = num1 + " times " + num2 + " is equal to " + prod + " fellow student." ;
+            }
+            function divide() {
+                let num1 = document.getElementById("No1").value;
+                let num2 = document.getElementById("No2").value;
+                const quo = parseInt(num1) / parseInt(num2);
+            document.getElementById("sagot").innerHTML = num1 + " divided by " + num2 + " is equal to " + quo + " fellow student." ;
+            }
+            function power() {
+                let num1 = document.getElementById("No1").value;
+                let num2 = document.getElementById("No2").value;
+                const expo = parseInt(num1) ** parseInt(num2);
+            document.getElementById("sagot").innerHTML = num1 + " to the power of " + num2 + " is equal to " + expo + " fellow student.";
+            }
+        </script>
+    </div>
+    </div>
+</body>
+</html>
